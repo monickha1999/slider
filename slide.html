@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Slide show</title>
+	<style>
+		
+		}
+		.box{
+			border-radius: 2px;
+		}
+		h1{
+			color: red;
+			background-color: yellow;
+			width: 90%;
+			border-style: solid;
+		}
+		button{
+			border-width: 5px;
+			border-color: red;
+			box-shadow: 1px 1px;
+		}
+		body{
+			background-image: linear-gradient(red, yellow);
+		}
+		.images{
+			display:block;
+			border-style: solid;
+		}
+		
+	</style>
+
+</head>
+<body>
+	
+	<center>
+		<h1>Words of great people</h1>
+	</center>
+	<div class="slides">
+		<center>
+			<img class="images" src="https://cdn.quotesgram.com/img/11/5/1199162542-1a668c7.jpg" style="width:45%" alt="Steve Jobs">
+			<img class="images" src="https://cdn.quotesgram.com/img/85/97/1202809234-15DA9EBB6.jpg" style="width:47%;height:60%" alt="einstein">			
+			<img class="images" src="https://cceb.edublogs.org/files/2018/12/unnamed-1qbj69r-1ik3abn-752x440.jpg" style="width:50%;height:60%" alt="brucelee">
+			<img class="images" src="https://i.pinimg.com/originals/08/5c/d9/085cd964eee0b089c46f82621f3dff7d.jpg" style="width:50%" alt="Nelson Mandella">		
+<br><br>
+			<div class="box">
+			<button type="button" onclick="plus(-1)"><b><font color="red"><</font></b></button>
+			<button type="button" onclick="plus(1)"><b><font color="red">></font></b></button>
+			</div>
+		</div>
+	</center>
+		
+		<script>
+			var slideIndex = 1;
+			showDivs(slideIndex);//related to slide index for displaying constant
+			function plus(n){
+				showDivs(slideIndex+=n);
+			}
+
+			function showDivs(n){
+				var i;
+				var x = document.getElementsByClassName("images");
+				if(n>x.length){
+					slideIndex=1
+				}
+				if(n<1){
+					slideIndex=x.length
+				}
+				for(i=0;i<x.length;i++){
+					x[i].style.display="none";
+				}
+				x[slideIndex-1].style.display = "block";//index display
+
+			}
+</script>
+	
+</body>
+</html>
